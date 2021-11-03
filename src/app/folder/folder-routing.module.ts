@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: FolderPage
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'comics-detail',
+    loadChildren: () => import('./comics-detail/comics-detail.module').then( m => m.ComicsDetailPageModule)
   }
 ];
 
