@@ -1,0 +1,7 @@
+{
+  "name": "MakeApiCalls",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
