@@ -1,9 +1,15 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
+    
 </ion-header>
 
-<ion-content>
+<ion-content class="container" color="dark">
+    <ion-item>
+        <ion-icon name="mail-outline"></ion-icon><ion-input type="email" placeholder="Enter your email"></ion-input>
+    </ion-item>
 
+    <ion-item>
+        <ion-icon name="key-outline"></ion-icon><ion-input type="password" placeholder="Enter your password"></ion-input>
+    </ion-item>
+
+    <ion-button (click)="goToHomePage()" expand="block" fill="filled">Sign In</ion-button>
 </ion-content>

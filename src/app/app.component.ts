@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
     public appPages = [
-        { title: 'Home', url: '/folder/Home', icon: 'mail' },
-        { title: 'Login', url: '/folder/Login', icon: 'paper-plane' }
+        { title: 'Home', url: '/homepage', icon: 'home' },
+        { title: 'Login', url: '/folder/login', icon: 'log-in' }
     ];
 
   constructor() {}

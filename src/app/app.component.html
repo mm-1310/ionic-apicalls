@@ -1,15 +1,14 @@
 <ion-app>
-    <ion-split-pane contentId="main-content">
+    <ion-split-pane style="background-color: #222428;" color="dark" contentId="main-content">
+        <ion-menu  color="dark" style="margin-top: 30px;" contentId="main-content" type="push">
+            <ion-content color="dark">
+                <ion-list style="background-color: #222428;" id="inbox-list">
+                    <ion-list-header color="dark">Menu</ion-list-header>
 
-        <ion-menu contentId="main-content" type="overlay">
-            <ion-content>
-                <ion-list id="inbox-list">
-                    <ion-list-header>Menu</ion-list-header>
-
-                    <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-                        <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+                    <ion-menu-toggle color="dark" auto-hide="false" *ngFor="let p of appPages; let i = index">
+                        <ion-item color="dark" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
                         <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-                        <ion-label>{{ p.title }}</ion-label>
+                        <ion-label style="color: aliceblue;">{{ p.title }}</ion-label>
                         </ion-item>
                     </ion-menu-toggle>
                 </ion-list>

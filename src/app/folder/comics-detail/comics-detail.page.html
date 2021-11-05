@@ -15,12 +15,12 @@
 <ion-content>
 
     <ion-card *ngFor="let comic of parseData" color="dark">
-        <ion-img style="min-height: 1vh !important; margin-top: 1px;" src="{{ comic.thumbnail['path'] + '/landscape_xlarge.' + comic.thumbnail['extension'] }}"></ion-img>
+        <ion-img style="margin-top: 1px;" src="{{ comic.thumbnail['path'] + '/portrait_incredible.' + comic.thumbnail['extension'] }}"></ion-img>
     
         <ion-card-header>
-            <ion-card-subtitle>
+            <ion-card-title>
                 {{comic.title}}
-            </ion-card-subtitle>
+            </ion-card-title>
         </ion-card-header>
     
         <ion-card-content>
