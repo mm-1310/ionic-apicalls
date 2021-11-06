@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
 import { LoadingController, AlertController } from '@ionic/angular';
 
@@ -34,7 +34,7 @@ export class LoginPage implements OnInit {
             loading.dismiss();
             const alert = await this.alertCtrl.create({
                 header: 'Login failed',
-                message: 'Username or password incorrect',
+                message: 'Username or password incorrect.',
                 buttons: ['OK'],
             });
 

@@ -25,7 +25,7 @@ export class ApicallsService {
         return this.http.get(`${this.baseURL}/comics?limit=20&ts=${this.timeStamp}&apikey=${this.publicKey}&hash=${this.hash}`)
     }
 
-    getComicDetails(id: any) {
+    getComicDetails(id: BigInteger) {
         return this.http.get(`${this.baseURL}/comics/${id}?ts=${this.timeStamp}&apikey=${this.publicKey}&hash=${this.hash}`)
     }
 }

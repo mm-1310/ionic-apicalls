@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 
 import { ApicallsService } from '../services/apicalls.service';
-import { map, finalize } from 'rxjs/operators'
-import { LoadingController } from '@ionic/angular'
+import { finalize } from 'rxjs/operators'
+import { LoadingController, AlertController } from '@ionic/angular'
 
 @Component({
     selector: 'app-folder',
@@ -12,15 +12,12 @@ import { LoadingController } from '@ionic/angular'
 })
 
 export class FolderPage implements OnInit {
-    public folder: string;
     data: any
     parseData: any
 
-    constructor(private activatedRoute: ActivatedRoute, private apiCallsService: ApicallsService, private loadingCtrl: LoadingController, private router: Router) { }
+    constructor(private apiCallsService: ApicallsService, private loadingCtrl: LoadingController, private alertCtrl: AlertController, private router: Router) { }
 
     async ngOnInit() {
-        this.folder = this.activatedRoute.snapshot.paramMap.get('id');
-
         let loading = await this.loadingCtrl.create()
         await loading.present()
 
@@ -30,7 +27,7 @@ export class FolderPage implements OnInit {
         })
     }
 
-    goToComicsDetail(id: any) {
+    goToComicsDetail(id: BigInteger) {
         let navExtras: NavigationExtras = {
             state: {
                 id: id
@@ -38,5 +35,4 @@ export class FolderPage implements OnInit {
         }
         this.router.navigate(['/comic-detail'], navExtras)
     }
-
 }

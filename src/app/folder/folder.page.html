@@ -8,8 +8,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-card *ngFor="let comic of parseData" color="dark" (click)="goToComicsDetail(comic.id)">
-        <!-- <ion-card-content *ngIf=" comic.images !== [] "> -->
+    <ion-card *ngFor="let comic of parseData" color="dark" id="{{comic.id}}" (click)="goToComicsDetail(comic.id)">
             <ion-img *ngIf="comic.images.length > 0" style="min-height: 1vh !important; margin-top: 1px;" src="{{ comic.thumbnail['path'] + '/landscape_xlarge.' + comic.thumbnail['extension'] }}" ></ion-img>
 
             <ion-card-header *ngIf="comic.images.length > 0">
@@ -21,6 +20,5 @@
             <ion-card-content *ngIf="comic.images.length > 0 && comic.format !== ''">
                 <p>Available Format: {{comic.format}} </p>
             </ion-card-content>
-
     </ion-card>
 </ion-content>

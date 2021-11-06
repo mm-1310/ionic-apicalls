@@ -15,7 +15,7 @@ import { finalize } from 'rxjs/operators';
 export class ComicsDetailPage implements OnInit {
     data: any
     parseData: any
-    comicsId: any
+    comicsId: BigInteger
 
     constructor(private activatedRoute: ActivatedRoute, private router: Router, private loadingCtrl: LoadingController, private apiCallsService: ApicallsService) { 
         this.activatedRoute.queryParams.subscribe(() => {

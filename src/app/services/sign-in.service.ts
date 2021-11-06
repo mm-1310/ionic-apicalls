@@ -15,7 +15,7 @@ export class SignInService {
 
     constructor() { }
 
-    getValidCred(username: any, password: any) {
+    getValidCred(username: string, password: string) {
         for (let i = 0; i < credData.length; i++) {
             if (credData[i].name == username && credData[i].password == password) {
                 return true
