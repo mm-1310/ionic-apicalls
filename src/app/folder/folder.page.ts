@@ -24,6 +24,16 @@ export class FolderPage implements OnInit {
         this.apiCallsService.getComicsList().pipe(finalize(() => loading.dismiss())).subscribe(data => {
             this.data = data
             this.parseData = this.data.data.results
+        }, async err => {
+            if (!err.ok) {
+                const alert = await this.alertCtrl.create({
+                    header: err.error.code,
+                    message: err.error.message,
+                    buttons: ['OK'],
+                });
+    
+                await alert.present();
+            }
         })
     }
 
